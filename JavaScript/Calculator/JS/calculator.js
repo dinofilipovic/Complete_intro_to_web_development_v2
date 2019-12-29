@@ -1,7 +1,7 @@
 let runningTotal = 0;
 let buffer = "0";
 let previousOperator = null;
-const screen = document.querySelector(".screen");
+const screen = document.querySelector('.screen');
 
 function buttonClick(value) {
     if (isNaN(parseInt(value))) {
@@ -27,12 +27,11 @@ function handleNumber(value) {
 }
 
 function handleSymbol(value) {
-    console.log(value);
     switch(value) {
         case 'C':
-            console.log("case C!");
             buffer = "0";
             runningTotal = 0;
+            previousOperator = null;
             break;
         case "=":
             if (previousOperator === null) {
@@ -54,12 +53,10 @@ function handleSymbol(value) {
             handleMath(value);
             break;
     }
+    rerender();
 }
 
 function rerender() {
     screen.innerText = buffer;
-}
-
-function handleSymbol(value) {
-    console.log("FUNCTION: handleSymbol: ", value);
+    console.log("BUFFER: ", screen.innerText);
 }
