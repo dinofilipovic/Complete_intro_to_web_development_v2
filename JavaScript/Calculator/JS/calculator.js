@@ -56,6 +56,10 @@ function handleSymbol(value) {
     rerender();
 }
 
+function flushOperation(value) {
+
+}
+
 function rerender() {
     screen.innerText = buffer;
     console.log("BUFFER: ", screen.innerText);
